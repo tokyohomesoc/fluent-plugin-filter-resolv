@@ -8,15 +8,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["airforon"]
   spec.email         = ["github@air-foron.com"]
 
-  spec.summary       = %q{TODO: Converts the FQDN to the IP address.}
-  spec.description   = %q{TODO: Converts the FQDN to the IP address.}
+  spec.summary       = %q{Converts the FQDN to the IP address.}
+  spec.description   = %q{Converts the FQDN to the IP address.}
   spec.homepage      = "https://github.com/airforon/fluent-plugin-resolv-filter"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'https://github.com/airforon/fluent-plugin-resolv-filter'"
+    spec.metadata['allowed_push_host'] = "Set to 'https://github.com/airforon/fluent-plugin-resolv-filter'"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
