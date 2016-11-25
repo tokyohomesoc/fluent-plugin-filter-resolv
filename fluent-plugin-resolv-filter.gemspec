@@ -5,8 +5,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-resolv-filter"
   spec.version       = "0.0.1"
-  spec.authors       = ["airforon"]
-  spec.email         = ["github@air-foron.com"]
+  spec.authors       = ["Tokyo Home SOC"]
+  spec.email         = ["github@homesoc.tokyo"]
 
   spec.summary       = %q{Converts the FQDN to the IP address.}
   spec.description   = %q{Converts the FQDN to the IP address.}
