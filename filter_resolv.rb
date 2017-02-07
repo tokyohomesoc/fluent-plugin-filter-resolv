@@ -5,7 +5,7 @@ module Fluent
     Plugin.register_filter('resolv', self)
 
     config_param :key_name,      :string, :default => 'host'
-    config_param :key_prefix,    :string, :default => 'fqdn'
+    config_param :key_postfix,    :string, :default => 'fqdn'
     config_param :remove_prefix, :string, :default => nil
     config_param :add_prefix,    :string, :default => nil
 
@@ -13,7 +13,7 @@ module Fluent
     def configure(conf)
       super
       @remove_prefix = Regexp.new("^#{Regexp.escape(remove_prefix)}\.?") unless conf['remove_prefix'].nil?
-      @key_prefix    = @key_name + "_" + @key_prefix
+      @key_postfix    = @key_name + "_" + @key_postfix
     end
 
     def filter_stream(tag, es)
