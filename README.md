@@ -20,7 +20,7 @@ Or install it yourself as:
   <filter **>
     type resolv
     key_name host
-    key_prefix fqdn
+    key_postfix fqdn
   </filter>
 ```
 
