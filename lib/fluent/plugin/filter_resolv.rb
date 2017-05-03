@@ -6,7 +6,6 @@ module Fluent
 
     config_param :key_name,      :string, :default => 'host'
     config_param :key_postfix,   :string, :default => 'fqdn'
-    config_param :dns_timeout,   :string, :default => '5'
     config_param :remove_prefix, :string, :default => nil
     config_param :add_prefix,    :string, :default => nil
 
@@ -22,7 +21,6 @@ module Fluent
       tag = (@add_prefix + '.' + tag) if @add_prefix
 
       es.each do |time,record|
-        dns.timeouts = @dns_timeout
         record[@key_postfix] = Resolv.getname(record[@key_name]) rescue nil
         new_es.add(time, record)
       end
