@@ -21,6 +21,7 @@ Or install it yourself as:
     type resolv
     key_name host
     key_postfix fqdn
+    dns_timeout 5
   </filter>
 ```
 
