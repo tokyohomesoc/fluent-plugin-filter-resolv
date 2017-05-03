@@ -14,7 +14,6 @@ module Fluent
       super
       @remove_prefix = Regexp.new("^#{Regexp.escape(remove_prefix)}\.?") unless conf['remove_prefix'].nil?
       @key_postfix   = @key_name + "_" + @key_postfix
-      dns.timeouts   = @dns_timeout
     end
 
     def filter_stream(tag, es)
@@ -23,6 +22,7 @@ module Fluent
       tag = (@add_prefix + '.' + tag) if @add_prefix
 
       es.each do |time,record|
+        dns.timeouts = @dns_timeout
         record[@key_postfix] = Resolv.getname(record[@key_name]) rescue nil
         new_es.add(time, record)
       end
